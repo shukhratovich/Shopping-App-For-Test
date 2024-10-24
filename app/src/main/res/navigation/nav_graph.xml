@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
 
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.splash.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainPager"
+            app:destination="@id/mainPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.HomeScreen"
+        android:label="HomeScreen" />
+    <fragment
+        android:id="@+id/mainPager"
+        android:name="uz.gita.shoppingappwithgithub.screens.pagers.MainPager"
+        android:label="MainPager" />
 </navigation>
