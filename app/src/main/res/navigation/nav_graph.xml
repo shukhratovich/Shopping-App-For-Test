@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashScreen">
 
     <fragment
         android:id="@+id/splashScreen"
         android:name="uz.gita.shoppingappwithgithub.screens.splash.SplashScreen"
-        android:label="SplashScreen" >
+        android:label="SplashScreen"
+        tools:layout="@layout/screen_splash">
         <action
             android:id="@+id/action_splashScreen_to_homeScreen"
             app:destination="@id/homeScreen" />
@@ -18,9 +20,15 @@
     <fragment
         android:id="@+id/homeScreen"
         android:name="uz.gita.shoppingappwithgithub.screens.home.HomeScreen"
-        android:label="HomeScreen" />
+        android:label="HomeScreen"
+        tools:layout="@layout/screen_home" />
     <fragment
         android:id="@+id/mainPager"
         android:name="uz.gita.shoppingappwithgithub.screens.pagers.MainPager"
-        android:label="MainPager" />
+        android:label="MainPager"
+        tools:layout="@layout/pager_main" >
+        <action
+            android:id="@+id/action_mainPager_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
 </navigation>

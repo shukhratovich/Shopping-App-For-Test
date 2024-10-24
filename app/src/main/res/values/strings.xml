@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Shopping App with GitHub</string>
+    <string name="page_text">Tarqatish punktlariga 1 kunda bepul yetkazib berish!</string>
+    <string name="page_second_text">muddatli to`lovi bilan o`zingizga ko`proq ruxsat bering</string>
 </resources>
