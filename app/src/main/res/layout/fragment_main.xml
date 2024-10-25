@@ -43,12 +43,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAdvertising"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#3F51B5"
+        android:layout_height="154dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/ll_top"
-        tools:listitem="@layout/item_reklama" />
+        tools:listitem="@layout/item_advertising" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategory"

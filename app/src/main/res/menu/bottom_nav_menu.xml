@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"
-        android:title="@string/home" />
-
+        android:paddingBottom="8dp"
+        android:title="@string/main"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/baseline_search_24"
-        android:title="@string/search" />
-
+        android:id="@+id/basket"
+        android:icon="@drawable/baseline_shopping_bag_24"
+        android:paddingBottom="8dp"
+        android:title="@string/basket"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/favorites"
-        android:icon="@drawable/baseline_favorite_border_24"
-        android:title="@string/favorites" />
+        android:id="@+id/catalog"
+        android:icon="@drawable/baseline_category_24"
+        android:paddingBottom="8dp"
+        android:title="@string/katalog"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/profile"
         android:icon="@drawable/baseline_person_24"
-        android:title="@string/profile" />
+        android:paddingBottom="8dp"
+        android:title="@string/profile_uz"
+        app:showAsAction="ifRoom" />
 </menu>

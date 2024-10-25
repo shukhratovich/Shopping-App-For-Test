@@ -48,7 +48,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
-    implementation (libs.lottie)
+    implementation(libs.lottie)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
@@ -62,6 +62,7 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment:2.5.0")
     implementation("androidx.navigation:navigation-ui:2.5.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation(libs.dotsindicator)
 

@@ -24,6 +24,10 @@ class RegisterScreen : Fragment(), RegisterContract.View {
         _binding = ScreenRegisterBinding.inflate(inflater)
         return binding.root
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -72,7 +76,11 @@ class RegisterScreen : Fragment(), RegisterContract.View {
     }
 
     override fun openLogin() {
-        findNavController().navigate(RegisterScreenDirections.actionRegisterScreenToLoginScreen())
+        findNavController().navigate(
+            RegisterScreenDirections.actionRegisterScreenToLoginScreen(
+                binding.phone.text.toString()
+            )
+        )
     }
 
     override fun setErrorFirstNameEditText(error: String) {

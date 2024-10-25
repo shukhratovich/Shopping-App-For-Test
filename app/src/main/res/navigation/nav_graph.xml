@@ -30,7 +30,11 @@
         android:id="@+id/homeScreen"
         android:name="uz.gita.shoppingappwithgithub.screens.home.HomeScreen"
         android:label="HomeScreen"
-        tools:layout="@layout/screen_home" />
+        tools:layout="@layout/screen_home" >
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/mainPager"
         android:name="uz.gita.shoppingappwithgithub.screens.pagers.MainPager"
@@ -54,6 +58,9 @@
         <action
             android:id="@+id/action_loginScreen_to_verifyScreen"
             app:destination="@id/verifyScreen" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/registerScreen"
@@ -72,5 +79,24 @@
         <action
             android:id="@+id/action_verifyScreen_to_homeScreen"
             app:destination="@id/homeScreen" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.CatalogFragment"
+        android:label="CatalogFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.BasketFragment"
+        android:label="FavoritesFragment" />
 </navigation>

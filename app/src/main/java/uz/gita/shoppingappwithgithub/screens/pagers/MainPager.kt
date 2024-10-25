@@ -30,6 +30,7 @@ class MainPager : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -50,7 +51,7 @@ class MainPager : Fragment() {
                     MyPref.userFirstVisit(true)
                     binding.tvNext.text = "Done"
                     binding.tvNext.setOnClickListener {
-                        findNavController().navigate(MainPagerDirections.actionMainPagerToLoginScreen())
+                        findNavController().navigate(MainPagerDirections.actionMainPagerToLoginScreen(""))
                     }
                 }
             }

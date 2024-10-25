@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import uz.gita.shoppingappwithgithub.databinding.ScreenLoginBinding
 import uz.gita.shoppingappwithgithub.source.entity.UserEntity
 
@@ -13,6 +14,7 @@ class LoginScreen : Fragment(), LoginContract.View {
     private var _binding: ScreenLoginBinding? = null
     private lateinit var presenter: LoginPresenter
     private val binding get() = _binding!!
+    private val args: LoginScreenArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +25,10 @@ class LoginScreen : Fragment(), LoginContract.View {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter = LoginPresenter(this)
@@ -30,6 +36,7 @@ class LoginScreen : Fragment(), LoginContract.View {
     }
 
     private fun init() {
+        binding.phone.setText(args.phone)
         binding.btnContinue.setOnClickListener {
             presenter.loginClicked(binding.phone.text.toString())
         }
@@ -41,7 +48,11 @@ class LoginScreen : Fragment(), LoginContract.View {
     }
 
     override fun enterAccount(userEntity: UserEntity) {
-        findNavController().navigate(LoginScreenDirections.actionLoginScreenToVerifyScreen())
+        findNavController().navigate(
+            LoginScreenDirections.actionLoginScreenToVerifyScreen(
+                userEntity.phone.toString()
+            )
+        )
     }
 
 

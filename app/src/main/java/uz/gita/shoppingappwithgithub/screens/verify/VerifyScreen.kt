@@ -8,13 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import uz.gita.shoppingappwithgithub.databinding.ScreenVerifyBinding
 
 class VerifyScreen : Fragment(), VerifyContract.View {
     private lateinit var presenter: VerifyContract.Presenter
     private var _binding: ScreenVerifyBinding? = null
     private val binding get() = _binding!!
-
+    private val args: VerifyScreenArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,10 +34,10 @@ class VerifyScreen : Fragment(), VerifyContract.View {
 
     private fun init() {
         binding.btnContinue.setOnClickListener {
-            presenter.verifyClicked(binding.code.text.toString())
+            presenter.verifyClicked(binding.code.text.toString(), args.phone)
         }
         binding.btnHome.setOnClickListener {
-            presenter.btnHomeClicked()
+            presenter.btnHomeClicked(args.phone)
         }
         binding.tvResent.setOnClickListener { presenter.resentCodeClicked() }
         presenter.resentCodeClicked()
@@ -46,8 +47,8 @@ class VerifyScreen : Fragment(), VerifyContract.View {
         Toast.makeText(requireContext(), "sms kodingiz : $code", Toast.LENGTH_LONG).show()
     }
 
-    override fun openHomeScreen() {
-        findNavController().navigate(VerifyScreenDirections.actionVerifyScreenToHomeScreen())
+    override fun openHomeScreen(phone: String) {
+        findNavController().navigate(VerifyScreenDirections.actionVerifyScreenToHomeScreen(phone))
     }
 
     override fun codeVerified() {

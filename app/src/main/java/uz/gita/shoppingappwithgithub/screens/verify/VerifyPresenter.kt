@@ -7,12 +7,12 @@ class VerifyPresenter(private val view: VerifyContract.View) : VerifyContract.Pr
     private var smsCode: String = generateSmsCode()
 
 
-    override fun verifyClicked(code: String) {
+    override fun verifyClicked(code: String,phone: String) {
         if (code.isBlank()) {
             view.setErrorCode("Kodni to`g`ri kiriting!")
         } else if (code == smsCode) {
             view.codeVerified()
-//            model.saveUserToPreference("")
+            model.saveUserToPreference(phone)
         }
     }
 
@@ -21,8 +21,8 @@ class VerifyPresenter(private val view: VerifyContract.View) : VerifyContract.Pr
         view.showSmsCode(smsCode)
     }
 
-    override fun btnHomeClicked() {
-        view.openHomeScreen()
+    override fun btnHomeClicked(phone:String) {
+        view.openHomeScreen(phone)
     }
 
     private fun generateSmsCode(): String {

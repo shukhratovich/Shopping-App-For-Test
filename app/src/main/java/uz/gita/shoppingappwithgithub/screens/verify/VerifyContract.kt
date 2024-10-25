@@ -6,14 +6,14 @@ interface VerifyContract {
     }
 
     interface Presenter {
-        fun verifyClicked(code: String)
+        fun verifyClicked(code: String,phone: String)
         fun resentCodeClicked()
-        fun btnHomeClicked()
+        fun btnHomeClicked(phone: String)
     }
 
     interface View {
         fun showSmsCode(code: String)
-        fun openHomeScreen()
+        fun openHomeScreen(phone:String)
         fun codeVerified()
         fun setErrorCode(error:String)
     }
