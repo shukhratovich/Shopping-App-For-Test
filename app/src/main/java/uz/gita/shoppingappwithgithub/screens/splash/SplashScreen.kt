@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -18,7 +17,11 @@ class SplashScreen : Fragment(R.layout.screen_splash) {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (MyPref.isUserFirstVisit()) {
-                findNavController().navigate(SplashScreenDirections.actionSplashScreenToHomeScreen())
+                if (MyPref.isUserRegistered()) {
+                    findNavController().navigate(SplashScreenDirections.actionSplashScreenToHomeScreen())
+                } else {
+                    findNavController().navigate(SplashScreenDirections.actionSplashScreenToLoginScreen())
+                }
             } else {
                 findNavController().navigate(SplashScreenDirections.actionSplashScreenToMainPager())
             }

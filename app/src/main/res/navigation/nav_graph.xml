@@ -12,10 +12,19 @@
         tools:layout="@layout/screen_splash">
         <action
             android:id="@+id/action_splashScreen_to_homeScreen"
-            app:destination="@id/homeScreen" />
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/homeScreen"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashScreen_to_mainPager"
-            app:destination="@id/mainPager" />
+            app:destination="@id/mainPager"
+            app:popUpTo="@id/mainPager"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
@@ -26,9 +35,42 @@
         android:id="@+id/mainPager"
         android:name="uz.gita.shoppingappwithgithub.screens.pagers.MainPager"
         android:label="MainPager"
-        tools:layout="@layout/pager_main" >
+        tools:layout="@layout/pager_main">
         <action
-            android:id="@+id/action_mainPager_to_homeScreen"
+            android:id="@+id/action_mainPager_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.login.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/screen_login">
+        <action
+            android:id="@+id/action_loginScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_verifyScreen"
+            app:destination="@id/verifyScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.register.RegisterScreen"
+        android:label="RegisterScreen"
+        tools:layout="@layout/screen_register">
+        <action
+            android:id="@+id/action_registerScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.verify.VerifyScreen"
+        android:label="VerifyScreen"
+        tools:layout="@layout/screen_verify" >
+        <action
+            android:id="@+id/action_verifyScreen_to_homeScreen"
             app:destination="@id/homeScreen" />
     </fragment>
 </navigation>

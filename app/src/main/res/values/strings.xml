@@ -2,4 +2,13 @@
     <string name="app_name">Shopping App with GitHub</string>
     <string name="page_text">Tarqatish punktlariga 1 kunda bepul yetkazib berish!</string>
     <string name="page_second_text">muddatli to`lovi bilan o`zingizga ko`proq ruxsat bering</string>
+    <string name="tv_page_3">10 kun ichida hech qanday shartsiz qaytarish imkoniyati. Hech qanday bahslarsiz!</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+    <string name="_998_991234567">+998 991234567</string>
+    <string name="enter_phone">Telefon raqamingizni kiriting</string>
+    <string name="new_account">Yangi kabinet yarating</string>
+    <string name="login">Kirish</string>
 </resources>

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import uz.gita.shoppingappwithgithub.databinding.ScreenHomeBinding
+import uz.gita.shoppingappwithgithub.source.AppDatabase
 
 class HomeScreen : Fragment() {
     private var _binding: ScreenHomeBinding? = null
@@ -21,6 +22,5 @@ class HomeScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 }

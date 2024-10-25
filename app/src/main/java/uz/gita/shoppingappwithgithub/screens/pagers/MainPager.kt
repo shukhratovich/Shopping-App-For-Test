@@ -50,7 +50,7 @@ class MainPager : Fragment() {
                     MyPref.userFirstVisit(true)
                     binding.tvNext.text = "Done"
                     binding.tvNext.setOnClickListener {
-                        findNavController().navigate(MainPagerDirections.actionMainPagerToHomeScreen())
+                        findNavController().navigate(MainPagerDirections.actionMainPagerToLoginScreen())
                     }
                 }
             }

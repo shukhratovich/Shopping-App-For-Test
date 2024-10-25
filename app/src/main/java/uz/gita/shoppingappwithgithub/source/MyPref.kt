@@ -16,4 +16,20 @@ object MyPref {
     fun isUserFirstVisit(): Boolean {
         return myPref.getBoolean("visited", false)
     }
+
+    fun userRegistered(registered: Boolean) {
+        myPref.edit().putBoolean("registered", registered).apply()
+    }
+
+    fun isUserRegistered(): Boolean {
+        return myPref.getBoolean("registered", false)
+    }
+
+    fun userVerified(phone: String) {
+        myPref.edit().putString("phone", phone).apply()
+    }
+
+    fun isUserVerified(): String {
+        return myPref.getString("phone", "").toString()
+    }
 }

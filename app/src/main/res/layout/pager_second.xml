@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff">
 
     <ImageView
-        android:id="@+id/ivPayment"
+        android:id="@+id/ivShopping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/iv_payment"
@@ -23,7 +24,7 @@
         android:textAllCaps="true"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/ivPayment"
-        app:layout_constraintRight_toRightOf="@+id/ivPayment"
-        app:layout_constraintTop_toBottomOf="@+id/ivPayment" />
+        app:layout_constraintLeft_toLeftOf="@+id/ivShopping"
+        app:layout_constraintRight_toRightOf="@+id/ivShopping"
+        app:layout_constraintTop_toBottomOf="@+id/ivShopping" />
 </androidx.constraintlayout.widget.ConstraintLayout>
