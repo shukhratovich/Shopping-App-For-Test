@@ -53,6 +53,9 @@ class MainFragment : Fragment(), MainContract.View {
         adapterProduct.itemFavoriteClickListener = {
             presenter.productFavoriteClicked(it)
         }
+        adapterProduct.itemBasketClickListener = {
+            presenter.productBasketClicked(it)
+        }
     }
 
     override fun openFavoriteScreen() {

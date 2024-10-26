@@ -17,4 +17,10 @@ class MainPresenter(private val view: MainContract.View) : MainContract.Presente
         model.productFavoriteChanged(productEntity)
         return productEntity.isFavourite
     }
+
+    override fun productBasketClicked(productEntity: ProductEntity): Boolean {
+        productEntity.isInBasket = !productEntity.isInBasket
+        model.productBasketChanged(productEntity)
+        return productEntity.isInBasket
+    }
 }

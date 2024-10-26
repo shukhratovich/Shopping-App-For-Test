@@ -12,4 +12,8 @@ class MainModel : MainContract.Model {
     override fun productFavoriteChanged(productEntity: ProductEntity) {
         appDatabase.getProductDao().update(productEntity)
     }
+
+    override fun productBasketChanged(productEntity: ProductEntity) {
+        appDatabase.getProductDao().update(productEntity)
+    }
 }

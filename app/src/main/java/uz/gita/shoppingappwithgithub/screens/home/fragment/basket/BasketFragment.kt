@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import uz.gita.shoppingappwithgithub.databinding.FragmentBasketBinding
+import uz.gita.shoppingappwithgithub.screens.home.adapter.BasketListAdapter
 
 class BasketFragment : Fragment(), BasketContract.View {
     private lateinit var presenter: BasketContract.Presenter
@@ -31,5 +32,11 @@ class BasketFragment : Fragment(), BasketContract.View {
         super.onViewCreated(view, savedInstanceState)
         presenter = BasketPresenter(this)
         init()
+    }
+
+    private fun init() {
+        adapterBasket = BasketListAdapter()
+        adapterBasket.submitList(presenter.getBasket())
+        binding.rvBasket.adapter = adapterBasket
     }
 }

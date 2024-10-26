@@ -12,6 +12,7 @@ interface MainContract {
         fun favoriteClicked()
         fun getAllProduct():ArrayList<ProductEntity>
         fun productFavoriteClicked(productEntity: ProductEntity):Boolean
+        fun productBasketClicked(productEntity: ProductEntity):Boolean
     }
     interface View{
         fun openFavoriteScreen()

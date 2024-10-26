@@ -3,19 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_product"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:elevation="6dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvProduct"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
         android:backgroundTint="#EEEEF0"
         app:cardCornerRadius="12dp"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -57,10 +56,8 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@id/product_category"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvProduct"
+        app:layout_constraintStart_toEndOf="@+id/cvProduct"
+        app:layout_constraintTop_toTopOf="@+id/cvProduct"
         tools:text="@string/app_name" />
 
     <TextView
@@ -120,7 +117,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tvNewPrice"
         app:layout_constraintStart_toEndOf="@+id/tvNewPrice"
-        app:layout_constraintTop_toBottomOf="@+id/tvOldPrice"
         tools:text="so'm" />
 
     <androidx.cardview.widget.CardView
@@ -145,22 +141,30 @@
     </androidx.cardview.widget.CardView>
 
     <FrameLayout
-        android:id="@+id/ivBasket"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/bg_btn_basket"
-        app:layout_constraintBottom_toBottomOf="@+id/tvMoneyName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvMoneyName">
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:id="@+id/icon_Basket"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:text="-" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="end"
+            android:text="+" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="4dp"
-            android:src="@drawable/add_to_basket"
-            app:tint="#262626" />
+            android:text="0" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

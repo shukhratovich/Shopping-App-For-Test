@@ -13,6 +13,7 @@ class ProductAdapter(private var products: ArrayList<ProductEntity>) :
     RecyclerView.Adapter<ProductAdapter.ProductsVh>() {
     var itemClickListener: ((ProductEntity) -> Unit)? = null
     var itemFavoriteClickListener: ((ProductEntity) -> Boolean)? = null
+    var itemBasketClickListener: ((ProductEntity) -> Unit)? = null
 
     inner class ProductsVh(private val binding: ItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -30,7 +31,10 @@ class ProductAdapter(private var products: ArrayList<ProductEntity>) :
                     binding.ivFavorite.setImageResource(R.drawable.ic_not_favorite)
                 }
             }
-            binding.ivBasket.setOnClickListener { }
+            binding.ivBasket.setOnClickListener {
+                itemBasketClickListener?.invoke(products[adapterPosition])
+                binding.iconBasket.setImageResource(R.drawable.checked)
+            }
         }
 
         @SuppressLint("SetTextI18n")
