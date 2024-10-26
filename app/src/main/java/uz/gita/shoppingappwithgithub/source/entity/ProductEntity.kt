@@ -10,6 +10,7 @@ data class ProductEntity(
     val name: String,
     val oldPrice: String,
     val newPrice: String,
-    val isFavourite: Int?,
-    val isInBasket:Int?
+    var isFavourite: Boolean = false,
+    var isInBasket: Boolean = false,
+    val categoryId: Int
 )

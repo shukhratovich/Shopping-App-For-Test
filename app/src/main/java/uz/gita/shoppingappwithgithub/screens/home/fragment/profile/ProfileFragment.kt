@@ -1,4 +1,4 @@
-package uz.gita.shoppingappwithgithub.screens.home.fragment
+package uz.gita.shoppingappwithgithub.screens.home.fragment.profile
 
 import androidx.fragment.app.Fragment
 

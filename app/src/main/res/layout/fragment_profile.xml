@@ -22,12 +22,11 @@
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
-            android:backgroundTint="#008dcd"
             android:src="@drawable/baseline_person_24"
-            android:tint="#008dcd"
             app:civ_border_color="#008dcd"
             app:civ_border_overlay="true"
             app:civ_border_width="0dp"
+            android:backgroundTint="#008dcd"
             app:civ_circle_background_color="#ffffff" />
 
         <LinearLayout
@@ -69,14 +68,14 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <!--                <ImageView-->
-                <!--                    android:id="@+id/imageview1"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginRight="8dp"-->
-                <!--                    android:focusable="false"-->
-                <!--                    android:scaleType="center"-->
-                <!--                    android:src="@drawable/verified_profile" />-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageview1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:focusable="false"-->
+<!--                    android:scaleType="center"-->
+<!--                    android:src="@drawable/verified_profile" />-->
 
                 <LinearLayout
                     android:id="@+id/titik"

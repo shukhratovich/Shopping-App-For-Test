@@ -30,10 +30,13 @@
         android:id="@+id/homeScreen"
         android:name="uz.gita.shoppingappwithgithub.screens.home.HomeScreen"
         android:label="HomeScreen"
-        tools:layout="@layout/screen_home" >
+        tools:layout="@layout/screen_home">
         <argument
             android:name="phone"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeScreen_to_favoriteScreen2"
+            app:destination="@id/favoriteScreen" />
     </fragment>
     <fragment
         android:id="@+id/mainPager"
@@ -75,7 +78,7 @@
         android:id="@+id/verifyScreen"
         android:name="uz.gita.shoppingappwithgithub.screens.verify.VerifyScreen"
         android:label="VerifyScreen"
-        tools:layout="@layout/screen_verify" >
+        tools:layout="@layout/screen_verify">
         <action
             android:id="@+id/action_verifyScreen_to_homeScreen"
             app:destination="@id/homeScreen" />
@@ -85,18 +88,32 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.MainFragment"
-        android:label="MainFragment" />
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_favoriteScreen"
+            app:destination="@id/favoriteScreen" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.ProfileFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.profile.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.CatalogFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.category.CategoryFragment"
         android:label="CatalogFragment" />
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.BasketFragment"
+        android:name="uz.gita.shoppingappwithgithub.screens.home.fragment.basket.BasketFragment"
         android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/favoriteScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.favorite.FavoriteScreen"
+        android:label="FavoriteScreen"
+        tools:layout="@layout/screen_favorite" />
+    <fragment
+        android:id="@+id/catalogScreen"
+        android:name="uz.gita.shoppingappwithgithub.screens.catalog.CatalogScreen"
+        android:label="CatalogScreen" />
 </navigation>
